@@ -1,0 +1,34 @@
+
+#mLogo{
+    margin-left: 10px;
+    height: 30px;
+    width: 10%;
+}
+
+
+#navVr{
+    border-left: 2px solid black; 
+    height: 26px;
+}
+#signUp{
+    text-decoration:none;
+    color: #2d5550;
+}
+#navSun{
+    color: #0B6477;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+#nav-text{
+    color: #0B6477;
+}
+#contestTitle{
+    background-color: #0B6477;
+    padding: 5px;
+    color:white;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}

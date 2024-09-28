@@ -1,0 +1,202 @@
+body{
+    background-image: url("WebTech/sAsset\ 4-8.png");
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    
+}
+
+*{
+    
+
+  
+    
+
+
+    text-decoration:none;
+
+    transition:.2s linear;
+}
+
+
+.login-box {
+    max-width: 400px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #16423C;
+}
+.login-box h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #16423C;
+}
+
+.login-box input[type="email"], .login-box input[type="password"] {
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #6A9B88;
+    font-size: 1rem;
+  
+}
+.login-box .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.login-box .options a {
+    font-size: 0.9rem;
+    color: #6A9B88;
+    text-decoration: none;
+}
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    font-size: 22px;
+    /* background-color: #95bbad; */
+    background-color: #6A9B88;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+.login-box button:hover{
+    background-color: #48695c;
+   
+}
+
+.login-box .separator {
+    margin: 20px 0;
+    position: relative;
+    text-align: center;
+    
+}
+label{
+    font-weight: 600;
+    font-size: 15px;
+    color: #4f7465;
+}
+#forgot-pass{
+    font-weight: 600;
+}
+.login-box .separator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 40%;
+    height: 1px;
+    background-color: #ccc;
+}
+.login-box .separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 40%;
+    height: 1px;
+    background-color: #ccc;
+}
+.login-box .separator span {
+    background-color: white;
+    padding: 0 10px;
+    color: #6A9B88;
+}
+.login-box .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.login-box .social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.login-box .social-icons a.google { 
+    
+   
+
+  
+
+}    
+p{
+    font-weight: 600;
+}
+.login-box .social-icons a.github {}
+.login-box .social-icons a.linkedin {  }
+.login-box .social-icons a.facebook { }
+.login-box .sign-up {
+    margin-top: 10px;
+    font-weight: 600;
+}
+.login-box .sign-up a {
+    color: #16423C;
+    text-decoration:underline;
+}
+
+
+.header{
+    display:flex;
+
+   justify-content: space-between;
+    padding:1.9rem 7%;
+  
+     /* background-color: #6b1212; */
+   
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:1000;
+}
+
+
+
+.header .logo .img{
+   
+}
+
+.header .navbar a{
+    margin:0 1 rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding:.5rem;
+    color: #4f7465;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.header .navbar a:hover{
+  
+   
+}
+
+#logo2{
+    position: absolute;
+    top:17px;
+}
+  
+  
+#eng{
+    position: absolute;
+    margin-left:37px;
+    margin-top:-8px;
+}
