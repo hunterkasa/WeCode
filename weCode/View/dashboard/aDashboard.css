@@ -1,0 +1,69 @@
+body{
+    background-image: url('../files/designImg/plbg.jpeg');
+    background-position: center;
+    background-size: fill;
+}
+#mLogo{
+    margin-left: 10px;
+    height: 30px;
+    width: 10%;
+}
+
+#navVr{
+    border-left: 2px solid black; 
+    height: 26px;
+}
+#signUp{
+    text-decoration:none;
+    color: #2d5550;
+}
+#navSun{
+    color: #0B6477;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+#nav-text{
+    color: #0B6477;
+}
+#seNav{
+    background-color: #0B6477;
+    
+}
+img{
+    height: 100px;
+    width: 120px;
+}
+#profileFrame{
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+}
+#mBody{
+    position: relative;
+    height: 100%;
+    width: 1500px;
+    padding: 40px;
+    margin: 50px;
+    margin-left: 200px;
+    background: #a1d3d7; /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+#totalContest,#totalProblem{
+   font-size: 20px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+#addContest{
+    height: 100%;
+    width: 50%;
+}
+button{
+    background-color: #012f3a;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+
