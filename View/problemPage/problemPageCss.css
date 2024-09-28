@@ -1,0 +1,99 @@
+
+#mLogo{
+    margin-left: 10px;
+    height: 30px;
+    width: 10%;
+}
+
+
+#navVr{
+    border-left: 2px solid black; 
+    height: 26px;
+}
+#signUp{
+    text-decoration:none;
+    color: #2d5550;
+}
+#navSun{
+    color: #0B6477;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+#nav-text{
+    color: #0B6477;
+}
+
+hr{
+    border: 1px solid #0B6477;
+}
+#seNav{
+    background-color:#14919b;height:50px
+}
+#leftWindow
+{
+    background-color: white;
+}
+#cpyBtn{
+    border:none;
+    background-color:transparent;
+}
+#codeBox{
+    background-color:#0b6477;
+     width: 902px;
+}
+#selectLang{
+    background-color:#0b6477;
+    color:white;
+    border-radius: 10px; border:1px solid white
+}
+textarea{
+    background-color:#00455a;
+    border:none;
+}
+#codeArea{
+    
+    color:white;
+    width:auto;
+}
+#inputTitle{
+    background-color:#0b6477; 
+    width: 905px;
+}
+#selectFile{
+    background-color:#0b6477;
+    color:white; 
+    border-radius: 10px; 
+    border:1px solid white
+}
+#inputTextarea{
+    background-color:#80b1c0;
+    color:white;
+    width:auto;
+}
+#buttomBtn{
+    background-color:#0b6477;
+    color:white;
+    width:120px;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    font-size: 18px;
+   
+}
+#buttomBtn:hover{
+   background-color: #00455a;
+}
+#cpyButton{
+    background-color: transparent;
+    border:none;
+}
+#seNav{
+    width: 100%;
+}
+#rightWindow{
+    background-color:#14919b;
+    height: 800px;
+}
+#selectFile{
+    background-color: #00455a;
+}
