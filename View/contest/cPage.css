@@ -1,0 +1,94 @@
+
+body{
+    background-image: url('../files/designImg/plbg.jpeg');
+    background-position: center;
+    background-size: cover;
+}
+
+#mLogo{
+    margin-left: 10px;
+    height: 30px;
+    width: 10%;
+}
+
+h3{
+    color: #0B6477;
+}
+#navVr{
+    border-left: 2px solid black; 
+    height: 26px;
+}
+#signUp{
+    text-decoration:none;
+    color: #2d5550;
+}
+#navSun{
+    color: #0B6477;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+#nav-text{
+    color: #0B6477;
+}
+#contestTitle{
+    background-color: #0B6477;
+    padding: 5px;
+    color:white;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px 40px 10px 40px;
+}
+#carD{
+    height: 150px;
+    width: 250px;
+    border-radius: 10px;
+    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+table{
+    margin-top: 20px;
+}
+table th {
+    background-color: #0B6477;
+    color: white;
+}
+table td {
+    background-color: #cee0e4;
+}
+#pagination{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.page-link{
+    color: #0B6477;
+}
+.carD-body{
+    background-color: #0B6477;
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+#carD-image{
+    height: 100px;
+    width: 100%;
+    
+}
+#filteR{
+    background-color: #0B6477;
+    height: 400px;
+    width: 250px;
+    margin-right: 200px;
+    border-radius: 10px;
+}
+#ckBox{
+    border-radius: 10px;
+}
+button{
+    background-color: transparent;
+    color:white;
+    border-radius: 10px;
+    border: 1px solid white;
+}
