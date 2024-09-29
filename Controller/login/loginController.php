@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../../Model/databaseConnection/dbcon.php';
+$conn = getConnection();
 
 function validateInput($data) {
     return htmlspecialchars(stripslashes(trim($data)));
@@ -35,6 +36,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['problem_count'] = $problemCount;
             header("Location: ../../View/dashboard/adminDashboard.php");
         } else {
+            $_SESSION['id'] = $res['id'];
+            $_SESSION['name'] = $res['user_name'];
+            $_SESSION['rating'] = $res['rating'];
+            $_SESSION['email'] = $res['email'];
+
+            // Total contests participated
+            $contestQuery = "SELECT COUNT(*) as contest_count FROM registrations WHERE user_id = " . $res['id'];
+            $contestResult = $conn->query($contestQuery);
+            $contestCount = $contestResult->fetch_assoc()['contest_count'];
+            $_SESSION['contest_count'] = $contestCount;
+
+            // Total problems solved
+            $problemQuery = "SELECT COUNT(*) as problem_count FROM submissions WHERE user_id = " . $res['id'] . " AND status = 'solved'";
+            $problemResult = $conn->query($problemQuery);
+            $problemCount = $problemResult->fetch_assoc()['problem_count'];
+            $_SESSION['problem_count'] = $problemCount;
+
+            
             header("Location: ../../View/dashboard/userDashboard.php");
         }
     } else {
