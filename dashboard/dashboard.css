@@ -1,0 +1,91 @@
+body{
+    background-image: url('../files/designImg/plbg.jpeg');
+    background-position: center;
+    background-size: fill;
+    color:white;
+}
+#mLogo{
+    margin-left: 10px;
+    height: 30px;
+    width: 10%;
+}
+
+#navVr{
+    border-left: 2px solid black; 
+    height: 26px;
+}
+#signUp{
+    text-decoration:none;
+    color: #2d5550;
+}
+#navSun{
+    color: #0B6477;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+#nav-text{
+    color: #0B6477;
+}
+img{
+    height: 100px;
+    width: 120px;
+}
+
+#mBody{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+    margin: 50px;
+    background:  #0B6477; /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    justify-content: center;
+}
+#totalContest,#totalProblem,#rating{
+   font-size: 20px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+ 
+.navText:hover{
+    background-color: #0B6477;
+    color: white;
+    border-radius: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+#details{
+    height: 100%;
+    width: 500px;
+}
+#btn{
+    background-color: #073c47;
+    color: white;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    border:none;
+}
+#btn:hover{
+    background-color: #031e24;
+    color: white;
+}
+#uImage{
+    border:1px solid black;
+    height: 200px;
+    width: 300px;
+    border-radius: 10px ;
+}
+.cngPhoto{
+    margin-right: 20px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+.cngPhoto:first-child{
+    margin-left: 30px;
+}
