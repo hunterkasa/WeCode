@@ -62,7 +62,7 @@
             <p class="mx-2 p-2 fw-bold" id="nav-text">
                 <?php
                 if (isset($_SESSION['name'])) {
-                    echo '<a href="../login/login.php" id="logout">Logout</a>';
+                    echo '<a href="../logout.php" id="logout">Logout</a>';
                 } else {
                     echo '<a href="../register/register.php" id="signUp">Signup</a>';
                 }

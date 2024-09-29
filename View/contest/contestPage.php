@@ -1,3 +1,10 @@
+<?php
+session_start();
+include '../../Controller/contest/contestPageController.php';
+$userId = $_SESSION['id'];
+$contests = returnContests($userId);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,134 +18,155 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm ">
-        <img id="mLogo" src="../files/designImg/logo.png" alt="logo">
+    <nav class="navbar navbar-expand-sm">
+        <img id="mLogo" src="../src/BRANaaaaDd-1-01.png" alt="logo">
         <div class="navbar-nav mx-auto">
-            <ul class="navbar-nav ">
-                <li class="nav-item px-3 fw-bold"><a class="nav-link " id="nav-text" href="#">Home</a></li>
-                <li class="nav-item px-3 fw-bold"><a class="nav-link " id="nav-text" href="#">Catalog</a> </li>
-                <li class="nav-item px-3 fw-bold"><a class="nav-link " id="nav-text" href="#">Contest </a></li>
-                <li class="nav-item px-3 fw-bold"><a class="nav-link " id="nav-text" href="#">Problem Set </a></li>
-                <li class="nav-item px-3 fw-bold"><a class="nav-link " id="nav-text" href="#">Ranking </a></li>
+            <ul class="navbar-nav">
+                <li class="nav-item px-3 fw-bold"><a class="nav-link" id="nav-text" href="#">Home</a></li>
+                <li class="nav-item px-3 fw-bold"><a class="nav-link" id="nav-text" href="#">Catalog</a></li>
+                <li class="nav-item px-3 fw-bold"><a class="nav-link" id="nav-text" href="#">Contest</a></li>
+                <li class="nav-item px-3 fw-bold"><a class="nav-link" id="nav-text" href="#">Problem Set</a></li>
+                <li class="nav-item px-3 fw-bold"><a class="nav-link" id="nav-text" href="#">Ranking</a></li>
             </ul>
         </div>
         <div class="d-flex bd-highlight mx-4">
-            <p class="mx-2 p-2 fw-bold" id="nav-text">Login</p>
-            <div class="vr mt-2" id="navVr"></div>
-            <p class="mx-2 p-2 fw-bold" id="nav-text"><a href="#" id="signUp">Signup</a></p>
+            <?php if (isset($_SESSION['name'])): ?>
+                <p class="mx-2 p-2 fw-bold" id="nav-text">Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?></p>
+                <form action="../logout.php" method="post" class="mx-2 p-2">
+                    <button type="submit" class="btn btn-link" id="logout-button">Logout</button>
+                </form>
+            <?php else: ?>
+                <p class="mx-2 p-2 fw-bold" id="nav-text">Login</p>
+                <div class="vr mt-2" id="navVr"></div>
+                <p class="mx-2 p-2 fw-bold" id="nav-text"><a href="#" id="signUp">Signup</a></p>
+            <?php endif; ?>
         </div>
         <div class="">
-            <i class="fa-solid fa-sun " id="navSun"></i>
+            <i class="fa-solid fa-sun" id="navSun"></i>
         </div>
     </nav>
     <div class="container" id="contestTitle">
         <div class="text-center">
             <h4>Contest</h4>
-            <p> Join code from around the globe to takle challenging problems and showcase<br>your skills in our programming contests!</p>
-            <p></p>
+            <p>Join code from around the globe to tackle challenging problems and showcase<br>your skills in our programming contests!</p>
         </div>
     </div>
 
     <div class="text-center mt-3">
-        <h3>UP COMING CONTEST</h3>
+        <h3>UPCOMING CONTEST</h3>
     </div>
     <div class="d-flex bd-highlight text-center justify-content-center">
-
-
+        <!-- Contest Cards -->
+        <?php foreach ($contests['future'] as $contest): ?>
+            <div class="container" id="carD">
+                <div class="image">
+                    <img id="carD-image" src="../src/1.jpg" alt="contest">
+                </div>
+                <div class="carD-body fw-bold text-center">
+                    <?php echo htmlspecialchars($contest['contest_name']); ?> <br>
+                    Time Left: <?php echo gmdate("H:i:s", $contest['time_left']); ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 
-    <div class="d-flex bd-highlight justify-content-center ">
-        <div class="container" id="carD">
-            <div class="image">
-                <img id="carD-image" src="https://static-cse.canva.com/blob/1210661/10SimplewaystoenhanceyourimageFeaturedImage1.jpg" alt="contest">
-            </div>
-            <div class="carD-body fw-bold text-center">
-                Weekly Contest #16 <br>
-                3 days 12 hours left
-            </div>
-        </div>
-        <div class="container" id="carD">
-            <div class="image">
-                <img id="carD-image" src="https://static-cse.canva.com/blob/1210661/10SimplewaystoenhanceyourimageFeaturedImage1.jpg" alt="contest">
-            </div>
-            <div class="carD-body fw-bold text-center">
-                Weekly Contest #16 <br>
-                3 days 12 hours left
-            </div>
-        </div>
-        <div class="container" id="carD">
-            <div class="image">
-                <img id="carD-image" src="https://static-cse.canva.com/blob/1210661/10SimplewaystoenhanceyourimageFeaturedImage1.jpg" alt="contest">
-            </div>
-            <div class="carD-body fw-bold text-center">
-                Weekly Contest #16 <br>
-                3 days 12 hours left
-            </div>
-        </div>
-
-    </div>
-
-    <div class="row">
-        <div class="col-10">
+    <form action="../../Controller/contest/registerContestController.php" method="POST">
+        <div class="container">
             <div class="container">
-                <div class="container">
-
-                </div>
-                <div class="container">
-                    <table>
-                        <tr>
-                            <th>Contest ID</th>
-                            <th>Contest Type</th>
-                            <th>Rating</th>
-                            <th>Starting Date</th>
-                            <th>Problems</th>
-                            <th>Participants</th>
-                            <th></th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td><a href="#">Enter Contest</a></td>
-                        </tr>
-
-                    </table>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center" id="pagination">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="container" id="filteR">
-                  <div class="text-center text-white fw-bold p-2">
-                    Contest Filter
-                  </div>
-                  <hr class="text-white">
-                   <p class="fw-bold text-white">Contest Type</p>
-                        <div class="text-white">
-                            <input type="checkbox" id="ckBox"> All Contest <br>
-                            <input type="checkbox" name="" id="ckBox"> Weekly Contest <br>
-                            <input type="checkbox" name="" id="ckBox"> Monthly Contest <br>
+                <h2>Upcoming Contests</h2>
+                <div class="row">
+                    <?php foreach ($contests['future'] as $contest): ?>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <input type="hidden" name="contest_id" value="<?php echo $contest['id']; ?>">
+                                    <h5 class="card-title">Contest ID: <?php echo htmlspecialchars($contest['id']); ?></h5>
+                                    <p class="card-text">Starting Date: <?php echo htmlspecialchars($contest['start_date']); ?></p>
+                                    <p class="card-text">Problems: <?php echo htmlspecialchars($contest['problems']); ?></p>
+                                    <p class="card-text">Participants: <?php echo htmlspecialchars($contest['participants']); ?></p>
+                                    <p>
+                                        <?php if ($contest['is_registered']): ?>
+                                            <button class="btn btn-enter">Enter Contest</button>
+                                        <?php else: ?>
+                                            <button type="submit" name="register_contest" class="btn btn-register">Register</button>
+                                        <?php endif; ?>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    <div class="bd-highlight text-center mt-4">
-                         <button>Apply</button>
-                         <button>Cancel</button>
-                    </div>  
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
+    </form>
+
+
+
+    <div class="container">
+        <h2>Current Contests</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Contest ID</th>
+                    <th>Starting Date</th>
+                    <th>Problems</th>
+                    <th>Participants</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($contests['current'] as $contest): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($contest['id']); ?></td>
+                        <td><?php echo htmlspecialchars($contest['start_date']); ?></td>
+                        <td><?php echo htmlspecialchars($contest['problems']); ?></td>
+                        <td><?php echo htmlspecialchars($contest['participants']); ?></td>
+                        <td><a href="#">Enter Contest</a></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </div>
+
+    <div class="container">
+        <h2>Past Contests</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Contest ID</th>
+                    <th>Starting Date</th>
+                    <th>Problems</th>
+                    <th>Participants</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($contests['previous'] as $contest): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($contest['id']); ?></td>
+                        <td><?php echo htmlspecialchars($contest['start_date']); ?></td>
+                        <td><?php echo htmlspecialchars($contest['problems']); ?></td>
+                        <td><?php echo htmlspecialchars($contest['participants']); ?></td>
+                        <td><a href="#">View Results</a></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+    <div class="d-flex justify-content-center" id="pagination">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+
 </body>
 
 </html>
